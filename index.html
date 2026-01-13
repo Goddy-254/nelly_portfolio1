@@ -1,585 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --color-primary: #0d6efd;         /* Inviting blue */
-            --color-primary-light: #e3f2ff;  /* Very soft blue */
-            --color-primary-soft: #f5f9ff;   /* Page background */
-            --color-dark: #0f172a;           /* Deep navy text */
-            --color-muted: #64748b;          /* Muted gray text */
-            --color-border-soft: #d0e2ff;
-            --color-white: #ffffff;
-            --font-body: 'Montserrat', sans-serif;
-            --transition: 0.35s ease;
-            --section-padding: 90px 0;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #0d6efd;         /* Inviting blue */
+            --color-primary-light: #e3f2ff;  /* Very soft blue */
+            --color-primary-soft: #f5f9ff;   /* Page background */
+            --color-dark: #0f172a;           /* Deep navy text */
+            --color-muted: #64748b;          /* Muted gray text */
+            --color-border-soft: #d0e2ff;
+            --color-white: #ffffff;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.35s ease;
+            --section-padding: 90px 0;
+        }
 
-        *, *::before, *::after { box-sizing: border-box; }
+        *, *::before, *::after { box-sizing: border-box; }
 
-        body {
-            font-family: var(--font-body);
-            margin: 0;
-            color: var(--color-dark);
-            background: var(--color-primary-soft);
-            line-height: 1.7;
-        }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            color: var(--color-dark);
+            background: var(--color-primary-soft);
+            line-height: 1.7;
+        }
 
-        img { max-width: 100%; display: block; }
+        img { max-width: 100%; display: block; }
 
-        .container {
-            width: min(1200px, calc(100% - 40px));
-            margin: 0 auto;
-        }
+        .container {
+            width: min(1200px, calc(100% - 40px));
+            margin: 0 auto;
+        }
 
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-            backdrop-filter: blur(10px);
-            z-index: 10;
-        }
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
 
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
 
-        .nav__logo {
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--color-primary);
-            text-decoration: none;
-        }
+        .nav__logo {
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
 
-        .nav__links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-        .nav__links a {
-            color: var(--color-muted);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            transition: color var(--transition);
-        }
+        .nav__links a {
+            color: var(--color-muted);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition);
+        }
 
-        .nav__links a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0;
-            height: 2px;
-            background: var(--color-primary);
-            transition: width var(--transition);
-        }
+        .nav__links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width var(--transition);
+        }
 
-        .nav__links a:is(:hover, :focus-visible) {
-            color: var(--color-primary);
-        }
+        .nav__links a:is(:hover, :focus-visible) {
+            color: var(--color-primary);
+        }
 
-        .nav__links a:is(:hover, :focus-visible)::after {
-            width: 100%;
-        }
+        .nav__links a:is(:hover, :focus-visible)::after {
+            width: 100%;
+        }
 
-        .nav__hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
+        .nav__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
 
-        .nav__bar {
-            width: 26px;
-            height: 3px;
-            background: var(--color-primary);
-            transition: transform var(--transition);
-        }
+        .nav__bar {
+            width: 26px;
+            height: 3px;
+            background: var(--color-primary);
+            transition: transform var(--transition);
+        }
 
-        @media (max-width: 900px) {
-            .nav__links {
-                position: fixed;
-                top: 80px;           /* just below header */
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                padding: 12px 24px 18px;
-                box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
-                max-height: 55vh;     /* don’t cover whole screen */
-                overflow-y: auto;     /* scroll inside menu if needed */
-                display: none;        /* hidden until hamburger is clicked */
-            }
+        @media (max-width: 900px) {
+            .nav__links {
+                position: fixed;
+                top: 80px;           /* just below header */
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 12px 24px 18px;
+                box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+                max-height: 55vh;     /* don’t cover whole screen */
+                overflow-y: auto;     /* scroll inside menu if needed */
+                display: none;        /* hidden until hamburger is clicked */
+            }
 
-            .nav__links li {
-                margin: 2px 0;
-            }
+            .nav__links li {
+                margin: 2px 0;
+            }
 
-            .nav__links a {
-                padding: 8px 0;
-            }
+            .nav__links a {
+                padding: 8px 0;
+            }
 
-            .nav__links--open {
-                display: flex;
-            }
+            .nav__links--open {
+                display: flex;
+            }
 
-            .nav__hamburger { display: flex; }
-        }
+            .nav__hamburger { display: flex; }
+        }
 
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            padding: 160px 0 100px;
-            background: radial-gradient(circle at top left, var(--color-primary) 0%, #1d4ed8 30%, #0f172a 70%);
-            color: var(--color-white);
-            display: flex;
-            align-items: center;
-        }
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at top left, var(--color-primary) 0%, #1d4ed8 30%, #0f172a 70%);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+        }
 
-        .hero__grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 60px;
-            align-items: center;
-        }
+        .hero__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 60px;
+            align-items: center;
+        }
 
-        .hero__eyebrow {
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgba(226, 232, 240, 0.9);
-        }
+        .hero__eyebrow {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.9);
+        }
 
-        .hero h1 {
-            font-size: clamp(2.8rem, 5vw, 4rem);
-            margin: 15px 0;
-        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4rem);
+            margin: 15px 0;
+        }
 
-        .hero__subtitle {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            margin-bottom: 25px;
-        }
+        .hero__subtitle {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+        }
 
-        .hero__cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px 30px;
-            background: var(--color-white);
-            color: var(--color-dark);
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform var(--transition), box-shadow var(--transition);
-        }
+        .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            background: var(--color-white);
+            color: var(--color-dark);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
 
-        .hero__cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
-        }
+        .hero__cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
 
-        .hero__card {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(148, 163, 184, 0.5);
-            border-radius: 16px;
-            padding: 30px;
-            display: grid;
-            gap: 20px;
-        }
+        .hero__card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+            display: grid;
+            gap: 20px;
+        }
 
-        .hero__stat {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .hero__stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .hero__stat strong {
-            font-size: 2rem;
-        }
+        .hero__stat strong {
+            font-size: 2rem;
+        }
 
-        @media (max-width: 900px) {
-            .hero__grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-        }
+        @media (max-width: 900px) {
+            .hero__grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
 
-        @media (max-width: 600px) {
-            .hero {
-                padding: 120px 0 70px;
-                text-align: center;
-            }
+        @media (max-width: 600px) {
+            .hero {
+                padding: 120px 0 70px;
+                text-align: center;
+            }
 
-            .hero__grid {
-                gap: 24px;
-            }
+            .hero__grid {
+                gap: 24px;
+            }
 
-            .hero__card {
-                text-align: left;
-            }
+            .hero__card {
+                text-align: left;
+            }
 
-            .hero__cta {
-                width: 100%;
-                justify-content: center;
-            }
+            .hero__cta {
+                width: 100%;
+                justify-content: center;
+            }
 
-            .section {
-                padding: 60px 0;
-            }
+            .section {
+                padding: 60px 0;
+            }
 
-            .section__title {
-                font-size: 2rem;
-                text-align: center;
-            }
+            .section__title {
+                font-size: 2rem;
+                text-align: center;
+            }
 
-            .section__title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
+            .section__title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
 
-        /* Section styling */
-        .section {
-            padding: var(--section-padding);
-        }
+        /* Section styling */
+        .section {
+            padding: var(--section-padding);
+        }
 
-        .section--light { background: var(--color-white); color: var(--color-dark); }
-        .section--dark { background: var(--color-primary-soft); }
+        .section--light { background: var(--color-white); color: var(--color-dark); }
+        .section--dark { background: var(--color-primary-soft); }
 
-        .section__title {
-            font-size: 2.4rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
+        .section__title {
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-        .section__title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: currentColor;
-            position: absolute;
-            left: 0;
-            bottom: -12px;
-        }
+        .section__title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: currentColor;
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+        }
 
-        /* About split */
-        .about__grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            color: var(--color-dark);
-        }
+        /* About split */
+        .about__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            color: var(--color-dark);
+        }
 
-        .about__card {
-            border-left: 4px solid var(--color-primary);
-            padding-left: 20px;
-        }
+        .about__card {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 20px;
+        }
 
-        @media (max-width: 768px) {
-            .about__grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) {
+            .about__grid { grid-template-columns: 1fr; }
+        }
 
-        /* Experience timeline */
-        .timeline {
-            position: relative;
-        }
+        /* Experience timeline */
+        .timeline {
+            position: relative;
+        }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: rgba(148, 163, 184, 0.5);
-        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(148, 163, 184, 0.5);
+        }
 
-        .timeline__item {
-            width: 50%;
-            padding: 30px;
-            position: relative;
-        }
+        .timeline__item {
+            width: 50%;
+            padding: 30px;
+            position: relative;
+        }
 
-        .timeline__item:nth-child(odd) {
-            margin-left: 0;
-        }
+        .timeline__item:nth-child(odd) {
+            margin-left: 0;
+        }
 
-        .timeline__item:nth-child(even) {
-            margin-left: auto;
-        }
+        .timeline__item:nth-child(even) {
+            margin-left: auto;
+        }
 
-        .timeline__item::before {
-            content: '';
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            border: 3px solid var(--color-white);
-            top: 35px;
-            left: -7px;
-        }
+        .timeline__item::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--color-white);
+            top: 35px;
+            left: -7px;
+        }
 
-        .timeline__card {
-            border: 1px solid var(--color-border-soft);
-            border-radius: 12px;
-            padding: 25px;
-            background: var(--color-white);
-        }
+        .timeline__card {
+            border: 1px solid var(--color-border-soft);
+            border-radius: 12px;
+            padding: 25px;
+            background: var(--color-white);
+        }
 
-        .timeline__card h3 {
-            margin: 0 0 8px;
-        }
+        .timeline__card h3 {
+            margin: 0 0 8px;
+        }
 
-        .timeline__card strong {
-            display: block;
-            margin-bottom: 12px;
-            color: var(--color-muted);
-        }
+        .timeline__card strong {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--color-muted);
+        }
 
-        .timeline__card ul {
-            margin: 0;
-            padding-left: 20px;
-        }
+        .timeline__card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
 
-        @media (max-width: 900px) {
-            .timeline::before { left: 20px; }
-            .timeline__item {
-                width: 100%;
-                padding-left: 50px;
-            }
-            .timeline__item::before { left: 12px; }
-        }
+        @media (max-width: 900px) {
+            .timeline::before { left: 20px; }
+            .timeline__item {
+                width: 100%;
+                padding-left: 50px;
+            }
+            .timeline__item::before { left: 12px; }
+        }
 
-        /* Skills grid */
-        .skills__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+        /* Skills grid */
+        .skills__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
 
-        .skill-card {
-            background: var(--color-primary-soft);
-            border: 1px solid var(--color-border-soft);
-            border-radius: 12px;
-            padding: 25px;
-        }
+        .skill-card {
+            background: var(--color-primary-soft);
+            border: 1px solid var(--color-border-soft);
+            border-radius: 12px;
+            padding: 25px;
+        }
 
-        .skill-card h4 {
-            margin-top: 0;
-        }
+        .skill-card h4 {
+            margin-top: 0;
+        }
 
-        .skill-card ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 10px 0 0;
-        }
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 0;
+        }
 
-        .skill-card li {
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-        }
+        .skill-card li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--color-primary);
-            color: var(--color-white);
-        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
 
-        .footer a {
-            color: var(--color-white);
-            text-decoration: none;
-        }
-    </style>
+        .footer a {
+            color: var(--color-white);
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <header class="header" id="monoHeader">
-        <div class="container nav">
-            <a href="#home" class="nav__logo">Nelly Mukabana RN</a>
-            <nav>
-                <ul class="nav__links" id="monoNavLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                </ul>
-            </nav>
-            <button class="nav__hamburger" id="monoHamburger" aria-label="Toggle navigation">
-                <span class="nav__bar"></span>
-                <span class="nav__bar"></span>
-                <span class="nav__bar"></span>
-            </button>
-        </div>
-    </header>
+    <header class="header" id="monoHeader">
+        <div class="container nav">
+            <a href="#home" class="nav__logo">Nelly Mukabana RN</a>
+            <nav>
+                <ul class="nav__links" id="monoNavLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+            <button class="nav__hamburger" id="monoHamburger" aria-label="Toggle navigation">
+                <span class="nav__bar"></span>
+                <span class="nav__bar"></span>
+                <span class="nav__bar"></span>
+            </button>
+        </div>
+    </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container hero__grid">
-                <div>
-                    <p class="hero__eyebrow">Registered Nurse</p>
-                    <h1>Nelly Mukabana, RN</h1>
-                    <p class="hero__subtitle">Three years of hands-on bedside experience providing safe, calm and evidence‑based care.</p>
-                    <p>From initiating oxygen therapy to coordinating multidisciplinary care, I focus on clear communication and gentle, thorough nursing for every patient and family I support.</p>
-                    <a class="hero__cta" href="Nelly_CV.pdf">
-                        <i class="fas fa-arrow-down"></i>
-                        Download CV
-                    </a>
-                </div>
-                <div class="hero__card">
-                    <div class="hero__stat">
-                        <span>Years of nursing experience</span>
-                        <strong>3</strong>
-                    </div>
-                    <div class="hero__stat">
-                        <span>Core focus</span>
-                        <strong>Safe bedside care</strong>
-                    </div>
-                    <div class="hero__stat">
-                        <span>Key strength</span>
-                        <strong>Patient education</strong>
-                    </div>
-                    <p>“Compassion, clear communication and attention to detail guide every decision I make as a nurse.”</p>
-                </div>
-            </div>
-        </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero__grid">
+                <div>
+                    <p class="hero__eyebrow">Registered Nurse</p>
+                    <h1>Nelly Mukabana, RN</h1>
+                    <p class="hero__subtitle">Three years of hands-on bedside experience providing safe, calm and evidence‑based care.</p>
+                    <p>From initiating oxygen therapy to coordinating multidisciplinary care, I focus on clear communication and gentle, thorough nursing for every patient and family I support.</p>
+                    <a class="hero__cta" href="Nelly_CV.pdf">
+                        <i class="fas fa-arrow-down"></i>
+                        Download CV
+                    </a>
+                </div>
+                <div class="hero__card">
+                    <div class="hero__stat">
+                        <span>Years of nursing experience</span>
+                        <strong>3</strong>
+                    </div>
+                    <div class="hero__stat">
+                        <span>Core focus</span>
+                        <strong>Safe bedside care</strong>
+                    </div>
+                    <div class="hero__stat">
+                        <span>Key strength</span>
+                        <strong>Patient education</strong>
+                    </div>
+                    <p>“Compassion, clear communication and attention to detail guide every decision I make as a nurse.”</p>
+                </div>
+            </div>
+        </section>
 
-        <section id="about" class="section section--light">
-            <div class="container">
-                <h2 class="section__title">Professional Overview</h2>
-                <div class="about__grid">
-                    <p>I am a diploma‑trained Registered Nurse with three years of experience providing holistic care across medical‑surgical and high‑dependency settings. My training at KMTC Bungoma grounded me in strong clinical skills, compassionate communication and safe medication practices.</p>
-                    <div class="about__card">
-                        <h3>Guiding Principle</h3>
-                        <p>Every patient deserves to feel heard, informed and safe. I combine evidence‑based practice with empathy, taking time to explain procedures, reassure families and advocate for patient comfort and dignity.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="about" class="section section--light">
+            <div class="container">
+                <h2 class="section__title">Professional Overview</h2>
+                <div class="about__grid">
+                    <p>I am a diploma‑trained Registered Nurse with three years of experience providing holistic care across medical‑surgical and high‑dependency settings. My training at KMTC Bungoma grounded me in strong clinical skills, compassionate communication and safe medication practices.</p>
+                    <div class="about__card">
+                        <h3>Guiding Principle</h3>
+                        <p>Every patient deserves to feel heard, informed and safe. I combine evidence‑based practice with empathy, taking time to explain procedures, reassure families and advocate for patient comfort and dignity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="experience" class="section section--dark">
-            <div class="container">
-                <h2 class="section__title">Experience & Education</h2>
-                <div class="timeline">
-                    <article class="timeline__item">
-                        <div class="timeline__card">
-                            <h3>Registered Nurse</h3>
-                            <strong>Medical–Surgical & High Dependency Unit | 2022 – Present</strong>
-                            <ul>
-                                <li>Provide bedside nursing care including oxygen administration, IV therapy, vital sign monitoring and pain management.</li>
-                                <li>Support doctors during procedures and coordinate care with physiotherapists, nutritionists and other team members.</li>
-                                <li>Educate patients and families on medication use, discharge instructions and home care routines.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline__item">
-                        <div class="timeline__card">
-                            <h3>Intern / Student Nurse</h3>
-                            <strong>Clinical Rotations | 2021 – 2022</strong>
-                            <ul>
-                                <li>Completed supervised practice in medical‑surgical, maternity, paediatrics and outpatient clinics.</li>
-                                <li>Performed basic nursing procedures such as wound dressing, injections and vital sign recording under supervision.</li>
-                                <li>Learned to prioritize patient safety, infection prevention and accurate documentation.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline__item">
-                        <div class="timeline__card">
-                            <h3>Diploma in Kenya Registered Nursing</h3>
-                            <strong>Kenya Medical Training College (KMTC), Bungoma | 2019 – 2022</strong>
-                            <ul>
-                                <li>Gained strong foundations in anatomy, physiology, pharmacology and medical‑surgical nursing.</li>
-                                <li>Participated in community health outreaches and health education programs in Bungoma County.</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+        <section id="experience" class="section section--dark">
+            <div class="container">
+                <h2 class="section__title">Experience & Education</h2>
+                <div class="timeline">
+                    <article class="timeline__item">
+                        <div class="timeline__card">
+                            <h3>Registered Nurse</h3>
+                            <strong>Medical–Surgical & High Dependency Unit | 2022 – Present</strong>
+                            <ul>
+                                <li>Provide bedside nursing care including oxygen administration, IV therapy, vital sign monitoring and pain management.</li>
+                                <li>Support doctors during procedures and coordinate care with physiotherapists, nutritionists and other team members.</li>
+                                <li>Educate patients and families on medication use, discharge instructions and home care routines.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline__item">
+                        <div class="timeline__card">
+                            <h3>Intern / Student Nurse</h3>
+                            <strong>Clinical Rotations | 2021 – 2022</strong>
+                            <ul>
+                                <li>Completed supervised practice in medical‑surgical, maternity, paediatrics and outpatient clinics.</li>
+                                <li>Performed basic nursing procedures such as wound dressing, injections and vital sign recording under supervision.</li>
+                                <li>Learned to prioritize patient safety, infection prevention and accurate documentation.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline__item">
+                        <div class="timeline__card">
+                            <h3>Diploma in Kenya Registered Nursing</h3>
+                            <strong>Kenya Medical Training College (KMTC), Bungoma | 2019 – 2022</strong>
+                            <ul>
+                                <li>Gained strong foundations in anatomy, physiology, pharmacology and medical‑surgical nursing.</li>
+                                <li>Participated in community health outreaches and health education programs in Bungoma County.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <section id="skills" class="section section--light">
-            <div class="container">
-                <h2 class="section__title">Core Competencies</h2>
-                <div class="skills__grid">
-                    <div class="skill-card">
-                        <h4><i class="fas fa-heartbeat"></i> Procedures</h4>
-                        <ul>
-                            <li>Oxygen administration and pulse oximetry monitoring</li>
-                            <li>Vital signs monitoring and early warning signs recognition</li>
-                            <li>Oral, IM and IV medication administration</li>
-                            <li>IV cannulation and fluid therapy management</li>
-                            <li>Wound care and dressing changes</li>
-                            <li>Catheter care and input/output monitoring</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h4><i class="fas fa-users"></i> Leadership</h4>
-                        <ul>
-                            <li>Teamwork in busy ward environments</li>
-                            <li>Patient and family education and counselling</li>
-                            <li>Calm communication during emergencies</li>
-                            <li>Time management across multiple patients</li>
-                            <li>Advocating for patient comfort and safety</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h4><i class="fas fa-laptop-code"></i> Systems</h4>
-                        <ul>
-                            <li>Electronic medical records and accurate documentation</li>
-                            <li>Basic triage and patient prioritization</li>
-                            <li>Infection prevention and control practices</li>
-                            <li>Safe handling and storage of medications</li>
-                            <li>Collaboration with multidisciplinary teams</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        <section id="skills" class="section section--light">
+            <div class="container">
+                <h2 class="section__title">Core Competencies</h2>
+                <div class="skills__grid">
+                    <div class="skill-card">
+                        <h4><i class="fas fa-heartbeat"></i> Procedures</h4>
+                        <ul>
+                            <li>Oxygen administration and pulse oximetry monitoring</li>
+                            <li>Vital signs monitoring and early warning signs recognition</li>
+                            <li>Oral, IM and IV medication administration</li>
+                            <li>IV cannulation and fluid therapy management</li>
+                            <li>Wound care and dressing changes</li>
+                            <li>Catheter care and input/output monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4><i class="fas fa-users"></i> Leadership</h4>
+                        <ul>
+                            <li>Teamwork in busy ward environments</li>
+                            <li>Patient and family education and counselling</li>
+                            <li>Calm communication during emergencies</li>
+                            <li>Time management across multiple patients</li>
+                            <li>Advocating for patient comfort and safety</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4><i class="fas fa-laptop-code"></i> Systems</h4>
+                        <ul>
+                            <li>Electronic medical records and accurate documentation</li>
+                            <li>Basic triage and patient prioritization</li>
+                            <li>Infection prevention and control practices</li>
+                            <li>Safe handling and storage of medications</li>
+                            <li>Collaboration with multidisciplinary teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Nelly Mukabana, RN. All rights reserved.</p>
-        <p>
-            <a href="mailto:nellymuthoni97@gmail.com"><i class="fas fa-envelope"></i></a>
-            &nbsp;|&nbsp;
-            <a href="https://linkedin.com/in/nellyopwoko" target="_blank"><i class="fab fa-linkedin"></i></a>
-            &nbsp;|&nbsp;
-            <a href="tel:0115511506"><i class="fas fa-phone"></i></a>
-        </p>
-    </footer>
+    <footer class="footer">
+        <p>&copy; 2025 Nelly Mukabana, RN. All rights reserved.</p>
+        <p>
+            <a href="mailto:nellymuthoni97@gmail.com"><i class="fas fa-envelope"></i></a>
+            &nbsp;|&nbsp;
+            <a href="https://linkedin.com/in/nellyopwoko" target="_blank"><i class="fab fa-linkedin"></i></a>
+            &nbsp;|&nbsp;
+            <a href="tel:0115511506"><i class="fas fa-phone"></i></a>
+        </p>
+    </footer>
 
-    <script>
-        const monoHamburger = document.getElementById('monoHamburger');
-        const monoNavLinks = document.getElementById('monoNavLinks');
+    <script>
+        const monoHamburger = document.getElementById('monoHamburger');
+        const monoNavLinks = document.getElementById('monoNavLinks');
 
-        monoHamburger.addEventListener('click', () => {
-            monoNavLinks.classList.toggle('nav__links--open');
-        });
+        monoHamburger.addEventListener('click', () => {
+            monoNavLinks.classList.toggle('nav__links--open');
+        });
 
-        monoNavLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                monoNavLinks.classList.remove('nav__links--open');
-            });
-        });
-    </script>
+        monoNavLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                monoNavLinks.classList.remove('nav__links--open');
+            });
+        });
+    </script>
 </body>
 </html>
 
 
 
-
+how can i display email that is nellymuthoni@97 and phone number in a way that it can be it can be quickly visible
