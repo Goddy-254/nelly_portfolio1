@@ -76,7 +76,7 @@
 
         .nav__links a:hover { color: var(--color-primary); }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
             padding: 100px 0;
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
@@ -160,12 +160,6 @@
             color: var(--color-white);
         }
 
-        .hero__cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Hero Card */
         .hero__card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -191,7 +185,7 @@
             border: 1px solid rgba(13, 110, 253, 0.3);
         }
 
-        /* Sections */
+        /* Generic Sections */
         .section { padding: var(--section-padding); }
         .section--light { background: var(--color-white); }
         .section__title { font-size: 2rem; margin-bottom: 40px; font-weight: 800; }
@@ -209,7 +203,6 @@
             padding: 30px;
         }
 
-        /* Timeline */
         .timeline__item {
             border-left: 3px solid var(--color-primary);
             margin-left: 20px;
@@ -240,38 +233,47 @@
 
         /* MOBILE ADJUSTMENTS */
         @media (max-width: 900px) {
-            .hero { padding: 60px 0; }
-            .hero__grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero { padding: 50px 0; }
+            .hero__grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
             
-            /* Center paragraph and improve flow */
+            /* Enhanced Paragraph Arrangement */
             .hero__subtitle { 
-                margin-inline: auto; 
-                text-align: center;
-                max-width: 90%;
+                text-align: justify; /* Prevents jagged edges */
+                text-align-last: center; /* Keeps the last line centered */
+                margin: 0 auto 30px auto; 
+                padding: 0 10px;
+                line-height: 1.7;
+                font-size: 1rem;
             }
 
-            /* Arrange: Phone, Email, Location */
+            /* Stack Contact info clearly */
             .hero__quick-contact { 
                 flex-direction: column; 
-                gap: 15px; 
+                gap: 12px; 
                 align-items: center;
-                justify-content: center;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 15px;
+                border-radius: 15px;
             }
             .hero__quick-contact span, .hero__quick-contact a { 
                 justify-content: center; 
-                width: 100%;
             }
             
-            .btn-group { justify-content: center; flex-direction: column; }
+            .btn-group { flex-direction: column; gap: 10px; }
             .hero__cta { width: 100%; justify-content: center; }
             .nav__links { display: none; }
             
             .hero__stat {
                 flex-direction: column;
-                gap: 5px;
-                text-align: center;
+                gap: 8px;
+                padding-bottom: 15px;
             }
-            .license-badge { display: inline-block; margin-top: 5px; }
+            .license-badge { 
+                display: block; 
+                width: fit-content; 
+                margin: 5px auto 0 auto; 
+                font-weight: 700;
+            }
         }
     </style>
 </head>
@@ -351,24 +353,17 @@
 
         <section id="experience" class="section section--dark" style="background: #f1f5f9;">
             <div class="container">
-                <h2 class="section__title">Experience & Education</h2>
+                <h2 class="section__title">Experience</h2>
                 <div class="timeline">
                     <article class="timeline__item">
                         <h3>Staff Nurse</h3>
                         <strong>Hopkins Crescent Hospital – Bungoma | 2024 – 2025</strong>
-                        <ul>
-                            <li>Delivered patient-centered care in medical-surgical and ICU units.</li>
-                            <li>Ensured timely interventions and patient safety.</li>
-                        </ul>
+                        <p>Delivered patient-centered care in medical-surgical and ICU units. Ensured timely interventions and patient safety.</p>
                     </article>
-
                     <article class="timeline__item">
                         <h3>Staff Nurse</h3>
                         <strong>Bliss Medical Clinic – Kakamega | 2022 – 2023</strong>
-                        <ul>
-                            <li>Managed patient admissions and outpatient services.</li>
-                            <li>Administered family planning and reproductive health services.</li>
-                        </ul>
+                        <p>Managed patient admissions and outpatient services. Administered family planning and reproductive health services.</p>
                     </article>
                 </div>
             </div>
@@ -381,19 +376,17 @@
                     <div class="skill-card">
                         <h4><i class="fas fa-stethoscope"></i> Clinical Skills</h4>
                         <ul style="padding-left: 20px;">
-                            <li>Patient assessment & monitoring</li>
+                            <li>Patient assessment</li>
                             <li>Medication administration</li>
                             <li>IV therapy & wound care</li>
-                            <li>Infection prevention & control</li>
                         </ul>
                     </div>
                     <div class="skill-card">
                         <h4><i class="fas fa-users"></i> Soft Skills</h4>
                         <ul style="padding-left: 20px;">
-                            <li>Teamwork & communication</li>
+                            <li>Teamwork</li>
                             <li>Time management</li>
-                            <li>Compassionate patient care</li>
-                            <li>Professional ethics</li>
+                            <li>Compassionate care</li>
                         </ul>
                     </div>
                 </div>
